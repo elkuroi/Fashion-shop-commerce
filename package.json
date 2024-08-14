@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "react-app": "^1.1.2"
+  },
+  "devDependencies": {
+    "msw": "^2.3.5"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  }
+}

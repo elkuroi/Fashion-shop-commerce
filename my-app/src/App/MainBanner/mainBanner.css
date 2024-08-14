@@ -1,0 +1,130 @@
+.main-banner {
+    width: 100%;
+    font-family: 'Satoshi', sans-serif;
+    background-color: #F2F0F1;
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box; 
+    margin-top: -38px;
+    
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0; 
+    box-sizing: border-box; 
+    
+  }
+  
+  .text-content {
+    width: 596px;
+    margin-left: 232px;
+    
+  }
+  
+  .text-content h1 {
+    font-size: 64px;
+    font-family: "Integral CF Bold";
+    width: 577px; 
+    text-align: start;
+    font-weight: 600;
+    line-height: 1; 
+    padding-top: 94px;
+  }
+  
+  .text-content p {
+    font-size: 16px;
+    margin-top: -20px;
+    width: 545px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .shop-button {
+    display: inline-block;
+    font-size: 16px;
+    padding: 14.5px 0;
+    color: white;
+    background-color: #000;
+    border: none;
+    border-radius: 62px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    width: 210px;
+    height: 52px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    transition: ease 0.3s;
+    position: relative;
+    z-index: 1200;
+  }
+  
+  .shop-button:hover {
+    background-color: #222222;
+  }
+  
+  .img {
+    overflow: hidden; 
+    height: auto; 
+    position: relative; 
+    z-index: 1; 
+    margin-top: -544px;
+    margin-left: 300px;
+  }
+  
+  .img img {
+    display: block; 
+    width: auto; 
+    height: auto;
+    max-width: fit-content; 
+  }
+  
+  .stats-banner {
+    width: 596px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center; 
+    overflow: hidden;
+    
+  }
+  
+  .stats {
+    flex: 1;
+    max-width: 30%;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative; 
+
+  }
+  
+  
+  
+  .stats h2{
+    font-size: 40px;
+    font-weight: 600;
+    text-align: start;
+  }
+  .stats p{
+    text-align: start;
+  }
+
+  .brands {
+    background-color: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    height: 122px;
+    padding: 0 20px; 
+    width: 100%;
+    box-sizing: border-box; 
+    margin: 0 auto;
+    position: relative; 
+    z-index: 10; 
+    margin-top: -12px;
+  }
+  

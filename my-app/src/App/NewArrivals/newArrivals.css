@@ -1,0 +1,35 @@
+.newArrivals{
+    width: 100%;
+    font-family: 'Satoshi', sans-serif;
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box; 
+    text-align: center;
+}
+
+.container-arrivals{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+.container-arrivals h1{
+    margin-top: 72px;
+    font-size: 48px;
+    font-family: "Integral CF Bold";
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 86px;
+    margin: 0 auto;
+    box-sizing: border-box; 
+    text-align: center;
+    margin-top: 55px;
+}
+
+.product-card{
+    
+}
