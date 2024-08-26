@@ -1,5 +1,5 @@
 .header {
-  width: 100%; /* Охватывает всю ширину экрана */
+  width: 100%; 
   font-family: 'Satoshi', sans-serif;
   display: flex;
   justify-content: flex-start;
@@ -14,11 +14,12 @@
   top: 0; 
   background-color: #fff; 
   z-index: 1400; 
-  box-sizing: border-box; /* Обеспечивает корректный учет отступов и границ */
+  box-sizing: border-box; 
 }
 
+
 .header-shifted {
-  padding-top: 48px; /* Сдвиг вниз на высоту баннера */
+  padding-top: 48px; 
 }
   .sign-up-link {
     text-decoration: underline; 
@@ -104,7 +105,6 @@
   .dropdown-menu {
     position: absolute;
     top: 150%; 
-    left: -250%;
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -135,4 +135,23 @@
   
   .dropdown-menu a:hover {
     background-color: #f0f0f0;
+  }
+
+  .cart-link {
+    position: relative;
+  }
+  
+  .cart-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
   }

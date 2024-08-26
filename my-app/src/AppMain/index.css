@@ -1,5 +1,14 @@
 @import url('https://fonts.cdnfonts.com/css/satoshi');
 @import url(https://db.onlinewebfonts.com/c/b52804ac57ef6e90d2826a6b0f111133?family=Integral+CF+Bold);
+@font-face {
+    font-family: "Integral CF Bold";
+    src: url("https://db.onlinewebfonts.com/t/b52804ac57ef6e90d2826a6b0f111133.eot");
+    src: url("https://db.onlinewebfonts.com/t/b52804ac57ef6e90d2826a6b0f111133.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/b52804ac57ef6e90d2826a6b0f111133.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/b52804ac57ef6e90d2826a6b0f111133.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/b52804ac57ef6e90d2826a6b0f111133.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/b52804ac57ef6e90d2826a6b0f111133.svg#Integral CF Bold")format("svg");
+}
 
 html {
     scrollbar-color: #333333 #555555;

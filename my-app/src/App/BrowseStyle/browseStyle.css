@@ -1,0 +1,64 @@
+.browseStyle{
+    width: 100%;
+    font-family: 'Satoshi', sans-serif;
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box; 
+    text-align: center;
+    font-weight: 600;
+    margin-top: 80px;
+}
+
+.container_browse {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box; 
+    background-color: #F2F0F1;
+    border-radius: 40px;
+    height: 866px;
+}
+
+.container_browse h1{
+    font-family: "Integral CF Bold";
+    font-size: 48px;
+    padding-top: 70px;
+}
+
+.browse-cards{
+    margin-top: 64px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-left: 164px;
+}
+
+.browse-card img{
+    border-radius: 20px;
+    display: block;
+}
+.browse-card p{
+    border-radius: 20px;
+    position: absolute;
+    margin-left: 36px;
+    font-size: 36px;
+    color: #000;
+}
+
+.gym{
+    background-color: #fff;
+    width: 450px;
+    border-radius: 20px;
+}
+.gym img{
+    padding-left: 100px;
+}
+
+.browse-card {
+    cursor: pointer;
+    transition: transform 0.3s ease; 
+}
+
+.browse-card:hover {
+    transform: scale(1.05); 
+}

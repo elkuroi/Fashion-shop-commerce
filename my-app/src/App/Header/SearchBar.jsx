@@ -1,59 +1,71 @@
-
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './searchBar.css';
-import SearchIcon from '../assets/search.png'; 
+import SearchIcon from '../assets/main/search.png';
+import { products } from '../../Pages/CurrentProduct/CurrentProduct';
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
-  const handleInputChange = async (e) => {
+  const navigate = useNavigate();
+
+  const handleInputChange = useCallback((e) => {
     const newQuery = e.target.value;
     setQuery(newQuery);
 
     if (newQuery) {
-      try {
-        const response = await fetch(`/api/search?query=${encodeURIComponent(newQuery)}`);
-        const data = await response.json();
-        setResults(data);
-      } catch (error) {
-        console.error('Error fetching search results:', error);
-      }
+      const filteredProducts = products.filter(product =>
+        product.name.toLowerCase().includes(newQuery.toLowerCase())
+      );
+      setResults(filteredProducts);
     } else {
       setResults([]);
     }
-  };
+  }, []);
 
   const handleResultClick = (id) => {
-    window.location.href = `/items/${id}`;
+    navigate(`/product/${id}`);
+    setDropdownOpen(false);
   };
 
+  const handleFocus = () => setDropdownOpen(true);
+  const handleBlur = () => setTimeout(() => setDropdownOpen(false), 100);
+
+
+  const showNoResults = query && results.length === 0;
+
   return (
-    <div className="search-container">
-      <div className="search-input-wrapper">
-        <img className="search-icon" src={SearchIcon} alt="Search Icon" />
+    <div className="search-bar-container">
+      <div className="search-bar-input-wrapper">
+        <img className="search-bar-icon" src={SearchIcon} alt="Search Icon" />
         <input
           type="text"
-          className="search-input"
+          className="search-bar-input"
           placeholder="Search for products..."
           value={query}
           onChange={handleInputChange}
-          onFocus={() => setDropdownOpen(true)}
-          onBlur={() => setTimeout(() => setDropdownOpen(false), 100)}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
         />
       </div>
-      {isDropdownOpen && results.length > 0 && (
-        <div className="dropdown-menu">
-          {results.map(result => (
-            <div
-              key={result.id}
-              className="dropdown-item"
-              onClick={() => handleResultClick(result.id)}
-            >
-              {result.name}
-            </div>
-          ))}
+      {isDropdownOpen && (
+        <div className="search-bar-dropdown-menu">
+          {showNoResults ? (
+            <div className="search-bar-no-results">Nothing found</div>
+          ) : (
+            results.map(result => (
+              <div
+                key={result.id}
+                className="search-bar-dropdown-item"
+                onClick={() => handleResultClick(result.id)}
+              >
+                <img className="search-bar-item-image" src={result.image} alt={result.name} />
+                <span className="search-bar-item-name">{result.name}</span>
+              </div>
+            ))
+          )}
         </div>
       )}
     </div>
@@ -61,4 +73,3 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
-

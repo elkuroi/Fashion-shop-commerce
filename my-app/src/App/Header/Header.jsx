@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './header.css';
 import SearchBar from './SearchBar';
-import Logo from '../assets/logo.png';
-import Arrow from '../assets/arrow.png';
-import Cart from '../assets/cart.png';
-import User from '../assets/user.png';
-import Close from '../assets/close.png';
+import DiscountBanner from '../DiscountBanner/DiscountBanner';
+import Logo from '../assets/main/logo.png';
+import Arrow from '../assets/main/arrow.png';
+import Cart from '../assets/main/cart.png';
+import User from '../assets/main/user.png';
+import Close from '../assets/main/close.png';
+import { selectTotalQuantity } from '../../App/Redux/cartSlice';
 
 const AppHeader = () => {
   const [isBannerVisible, setIsBannerVisible] = useState(true);
+  const totalQuantity = useSelector(selectTotalQuantity);
 
   const handleBannerClose = () => {
     setIsBannerVisible(false);
@@ -16,33 +21,37 @@ const AppHeader = () => {
 
   return (
     <>
-      {isBannerVisible && (
-        <div className="discount-banner">
-          <p>Sign up and get 20% off on your first order. 
-          <a href="#" className="sign-up-link">Sign Up Now</a> 
-          <img src={Close} className="close-btn" onClick={handleBannerClose} alt="Close"/>
-          </p>
-        </div>
-      )}
+
       <div className={`header ${isBannerVisible ? 'header-shifted' : ''}`}>
-        <img className="logo" src={Logo} alt="Logo" />
+        <Link to="/">
+          <img className="logo" src={Logo} alt="Logo" />
+        </Link>
         <div className="menu">
           <div className="dropdown">
-            <a href="#" className="dropdown-toggle">
+            <Link to="/shop" className="dropdown-toggle">
               Shop <img className="arrow" src={Arrow} alt="Arrow" />
-            </a>
+            </Link>
             <div className="dropdown-menu">
-              <a href="#">Men's</a>
-              <a href="#">Women's</a>
-              <a href="#">New items</a>
+              <Link to="/shop/men">Men's</Link>
+              <Link to="/shop/women">Women's</Link>
+              <Link to="/shop/new">New items</Link>
             </div>
           </div>
-          <a href="#">On Sale</a>
-          <a href="#">New Arrivals</a>
-          <a href="#">Brands</a>
+          <Link to="/sale">On Sale</Link>
+          <Link to="/new-arrivals">New Arrivals</Link>
+          <Link to="/brands">Brands</Link>
           <SearchBar />
-          <a href="#"><img className="cart-img" src={Cart} alt="Cart" /></a>
-          <a href="#"><img src={User} alt="User" /></a>
+          <Link to="/cart" className="cart-link">
+            <img className="cart-img" src={Cart} alt="Cart" />
+            {totalQuantity > 0 && (
+              <div className="cart-badge">
+                {totalQuantity}
+              </div>
+            )}
+          </Link>
+          <Link to="/profile">
+            <img src={User} alt="User" />
+          </Link>
         </div>
       </div>
     </>

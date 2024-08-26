@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './mainBanner.css';
-import Banner from '../assets/banner.png';
-import Versace from '../assets/versace.png'
-import Zara from '../assets/zara.png'
-import Gucci from '../assets/gucci.png'
-import Prada from '../assets/prada.png'
-import Calvin from '../assets/calvin.png'
+import Banner from '../assets/main/banner.png';
+import Versace from '../assets/main/versace.png'
+import Zara from '../assets/main/zara.png'
+import Gucci from '../assets/main/gucci.png'
+import Prada from '../assets/main/prada.png'
+import Calvin from '../assets/main/calvin.png'
+
+
 const MainBanner = () => {
   return (
     <div className='main-banner'>
