@@ -5,7 +5,7 @@ import cartReducer from './cartSlice';
 export const store = configureStore({
   reducer: {
     showMore: showMoreReducer,
-    cart: cartReducer,  
+    cart: cartReducer,
   },
 });
 

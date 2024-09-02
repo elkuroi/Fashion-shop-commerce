@@ -21,7 +21,6 @@ const AppHeader = () => {
 
   return (
     <>
-
       <div className={`header ${isBannerVisible ? 'header-shifted' : ''}`}>
         <Link to="/">
           <img className="logo" src={Logo} alt="Logo" />

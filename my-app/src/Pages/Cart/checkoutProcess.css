@@ -1,0 +1,91 @@
+.addressSummary{
+    width: 505px;
+    text-align: start;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    height: fit-content;
+    margin: 0 auto;
+  }
+
+  .cart-summary-con{
+    padding: 24px 24px;
+  
+  }
+
+  .addressSummary h2{
+    margin-left: 24px;
+  }
+  .addressSummary p{
+    margin-left: 24px;
+  }
+
+  .backBtn{
+    margin-top: 24px;
+    margin-left: 24px;
+    cursor: pointer;
+  }
+
+
+.input-city,
+.input-address {
+  width: 100%;
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  background-color: white; 
+  font-size: 16px; 
+  color: #000000; 
+  box-sizing: border-box; 
+  outline: none; 
+  appearance: none; 
+  margin-top: 10px;
+}
+
+
+
+.country-select:focus,
+.input-city:focus,
+.input-address:focus {
+  border-color: #007bff; 
+}
+
+.country-select::placeholder,
+.input-city::placeholder,
+.input-address::placeholder {
+  color: #999; 
+}
+
+.country-select option {
+  color: #333;
+}
+
+.addressSummary-con{
+    gap: 10px;
+}
+
+
+  
+  .checkout-buttons button:hover {
+    background-color: #333; /* Более светлый черный при наведении */
+  }
+
+  .p-checkout-next{
+    white-space: nowrap; 
+  }
+
+  .checkout-buttons-next{
+    width: 50px;
+  }
+
+  .stripe {
+    width: 150px;
+    margin-left: 24px;
+    cursor: pointer;
+    background-color: #eaeaea;
+    border-radius: 25px;
+    border: 2px solid transparent; 
+  }
+  
+  .stripe.selected {
+    border-color: rgb(85, 175, 85); 
+  }
